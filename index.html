@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KORA | Cuidado natural para tu piel y cabello</title>
+<meta name="description" content="KORA: cuidado esencial para tu piel y cabello con fórmulas limpias y empaques sostenibles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&amp;family=Marcellus&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F5EF; --paper:#FFFFFF; --sage:#D5DAC0; --sage-l:#E1E4D6; --sage-xl:#EBECE3;
+  --green:#5B7B4A; --forest:#2D5E40; --ink:#2B3A2F; --muted:#6B7568; --gold:#D9A21E;
+  --r:24px; --font-h:'Marcellus','Times New Roman',serif; --font-b:'Jost','Helvetica Neue',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{font-family:var(--font-h);font-weight:400;line-height:1.1}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.btn{display:inline-block;background:var(--green);color:#fff;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border-radius:12px;transition:background .25s,transform .25s}
+.btn:hover{background:var(--forest);transform:translateY(-2px)}
+.btn.light{background:#fff;color:var(--forest);text-transform:none;letter-spacing:0;font-size:15px}
+.btn.light:hover{background:var(--sage-l)}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--bg);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 2px 18px rgba(45,94,64,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-h);font-size:26px;letter-spacing:.12em;color:var(--forest)}
+.logo-mark{width:40px;height:40px;display:grid;place-items:center;font-style:italic;font-size:24px;letter-spacing:0}
+.menu{display:flex;gap:26px;list-style:none}
+.menu a{font-size:12.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.menu a:hover,.menu a.active{color:var(--green);border-color:var(--green)}
+.nav-r{display:flex;align-items:center;gap:18px}
+.cart{position:relative;padding:6px}
+.cart span{position:absolute;top:-4px;right:-6px;background:var(--forest);color:#fff;font-size:10px;min-width:16px;height:16px;border-radius:8px;display:grid;place-items:center;transform:scale(0);transition:transform .25s}
+.cart span.on{transform:scale(1)}
+.burger{display:none;width:42px;height:42px;border-radius:10px;position:relative}
+.burger i,.burger i::before,.burger i::after{position:absolute;left:10px;width:22px;height:2px;background:var(--forest);content:"";transition:.3s}
+.burger i{top:20px}.burger i::before{top:-7px;left:0}.burger i::after{top:7px;left:0}
+.burger[aria-expanded=true] i{background:transparent}
+.burger[aria-expanded=true] i::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] i::after{top:0;transform:rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;padding-bottom:70px}
+.hero-card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--sage);min-height:460px;margin-inline:24px}
+.hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-txt{position:relative;padding:44px 28px 120px;max-width:560px}
+.hero-txt h1{font-size:clamp(40px,5.4vw,60px);text-transform:uppercase;color:var(--forest);margin-bottom:22px}
+.hero-txt p{font-size:20px;max-width:300px;margin-bottom:28px}
+.stats{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(1160px,100% - 48px);display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{background:#fff;border-radius:18px;padding:22px 12px;text-align:center;box-shadow:0 8px 24px rgba(45,94,64,.1)}
+.stat b{display:block;font-family:var(--font-h);font-weight:400;font-size:32px;color:var(--ink)}
+.stat small{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* Por qué */
+.why{padding:70px 0 110px}
+.sec-title{text-align:center;font-size:clamp(28px,3.4vw,38px);margin-bottom:56px}
+.why-grid{display:grid;grid-template-columns:1fr minmax(250px,320px) 1fr;gap:40px;align-items:center}
+.arch{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5.6;background:var(--sage-l)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.feat-col{display:flex;flex-direction:column;gap:38px}
+.feat{display:flex;gap:16px;align-items:flex-start}
+.feat .ic{width:46px;height:46px;border-radius:50%;background:var(--sage-l);display:grid;place-items:center;color:var(--forest);flex:none}
+.feat h3{font-family:var(--font-b);font-weight:600;font-size:15px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.feat p{font-size:14.5px;color:var(--muted)}
+
+/* Ritual */
+.ritual{background:var(--forest);color:#fff;border-radius:var(--r);margin-inline:24px;padding:56px 5%}
+.ritual-in{display:grid;grid-template-columns:.8fr 1.5fr;gap:48px;align-items:center}
+.ritual h2{font-size:clamp(32px,4vw,44px);text-transform:uppercase;margin-bottom:16px}
+.ritual p.lead{color:#d6e2d6;margin-bottom:28px;max-width:260px}
+.steps{display:flex;flex-direction:column;gap:12px}
+.step{display:flex;gap:18px;align-items:center;background:var(--sage-xl);color:var(--ink);border-radius:16px;padding:18px 22px;transition:transform .3s}
+.step:hover{transform:translateX(6px)}
+.step .n{font-family:var(--font-h);font-size:30px;color:var(--green);width:40px;flex:none}
+.step h3{font-family:var(--font-b);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* Productos */
+.shop{padding:100px 0 90px}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:-30px 0 40px}
+.tab{padding:10px 20px;border-radius:999px;font-size:14px;font-weight:500;transition:.25s}
+.tab:hover{background:var(--sage-l)}
+.tab.on{background:var(--forest);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:20px;padding:10px 10px 16px;box-shadow:0 4px 18px rgba(45,94,64,.06);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(45,94,64,.14)}
+.card.hide{display:none}
+.card .ph{border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card h3{font-family:var(--font-b);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;margin:14px 8px 4px}
+.card .row{display:flex;justify-content:space-between;align-items:flex-end;padding:0 8px}
+.price{font-weight:600;font-size:15px}
+.rate{font-size:11px;color:var(--muted)}.rate:before{content:"\2605 ";color:var(--gold)}
+.add{width:34px;height:34px;border-radius:9px;background:var(--forest);color:#fff;display:grid;place-items:center;transition:background .2s,transform .2s}
+.add:hover{background:var(--green);transform:scale(1.08)}
+.add svg{width:16px;height:16px}
+
+/* Nosotros */
+.about{background:var(--sage-xl);padding:70px 0}
+.about-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--sage)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(30px,3.6vw,40px);margin-bottom:20px}
+.about p{color:var(--muted);margin-bottom:14px;max-width:480px}
+.team{display:flex;gap:32px;margin-top:22px;flex-wrap:wrap}
+.person{display:flex;align-items:center;gap:12px}
+.person img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.person b{display:block;font-size:14px;font-weight:500}
+.person small{font-size:12.5px;color:var(--muted)}
+
+/* Contacto */
+.contact{padding:70px 0 60px}
+.contact-box{background:#E4EBD5;border-radius:var(--r);text-align:center;padding:60px 24px}
+.contact h2{font-size:clamp(28px,3.6vw,38px);text-transform:uppercase;margin-bottom:16px}
+.contact p{max-width:480px;margin:0 auto 28px;font-size:17px}
+.mail{display:block;margin-top:18px;font-size:14px;color:var(--muted)}
+footer{text-align:center;padding:20px 24px 36px;font-size:14px;color:var(--muted)}
+footer .logo{justify-content:center;margin-bottom:6px}
+
+/* Carrito (panel lateral) */
+.cart{display:grid;place-items:center}
+.cd-ov{position:fixed;inset:0;background:rgba(43,58,47,.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:90}
+.cd-ov.open{opacity:1;visibility:visible}
+.cd{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:100;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s ease;box-shadow:-12px 0 32px rgba(45,94,64,.18)}
+.cd.open{transform:none}
+.cd-h{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--sage-l)}
+.cd-h h2{font-size:26px;color:var(--forest)}
+.cd-x{width:38px;height:38px;border-radius:10px;font-size:26px;line-height:1;color:var(--forest)}
+.cd-x:hover{background:var(--sage-l)}
+.cd-body{flex:1;overflow-y:auto;padding:16px 24px}
+.cd-empty{text-align:center;color:var(--muted);padding:48px 0}
+.cd-item{display:flex;gap:12px;align-items:center;background:#fff;border-radius:14px;padding:10px;margin-bottom:10px}
+.cd-item img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:var(--sage-xl)}
+.cd-info{flex:1;min-width:0}
+.cd-info b{display:block;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;line-height:1.3}
+.cd-info small{color:var(--muted);font-size:13px}
+.cd-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+.cd-qty button{width:26px;height:26px;border-radius:8px;background:var(--sage-l);color:var(--forest);font-weight:600}
+.cd-qty button:hover{background:var(--sage)}
+.cd-qty span{min-width:18px;text-align:center;font-size:14px}
+.cd-rm{align-self:flex-start;color:var(--muted);font-size:20px;line-height:1;padding:2px 6px;border-radius:6px}
+.cd-rm:hover{color:var(--forest);background:var(--sage-xl)}
+.cd-f{border-top:1px solid var(--sage-l);padding:16px 24px 22px;background:#fff}
+.cd-total{display:flex;justify-content:space-between;font-size:18px;font-weight:600;margin-bottom:12px}
+.cd-f form{display:grid;gap:8px}
+.cd-f input,.cd-f textarea{width:100%;font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--sage);border-radius:10px;background:var(--bg);color:var(--ink)}
+.cd-f textarea{resize:vertical;min-height:54px}
+.cd-f input:focus,.cd-f textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.cd-f .btn{width:100%;text-align:center;margin-top:4px}
+.cd-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
+.cd-ok{text-align:center;padding:40px 8px}
+.cd-ok h3{font-size:26px;color:var(--forest);margin-bottom:12px}
+.cd-ok p{color:var(--muted);margin-bottom:12px}
+.cd-ok a.l{color:var(--green);text-decoration:underline}
+.cd-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--forest);color:#fff;padding:12px 20px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:120}
+.cd-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* Animaciones */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.load{animation:up .9s ease both;animation-delay:var(--d,0s)}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Responsive */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .arch{grid-column:1/-1;order:-1;max-width:320px;margin:0 auto;width:100%}
+  .ritual-in{grid-template-columns:1fr}
+  .ritual p.lead{max-width:none}
+  .menu{gap:16px}
+}
+@media (max-width:820px){
+  /* Menú hamburguesa */
+  .burger{display:block}
+  .menu{position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 24px 20px;box-shadow:0 12px 20px rgba(45,94,64,.12);display:none;max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow-y:auto}
+  .menu.open{display:flex;animation:up .3s ease}
+  .menu a{display:block;padding:14px 0;border-bottom:1px solid var(--sage-l)}
+  .nav-r .btn{display:none}
+
+  /* Hero: las estadísticas pasan a una grilla de 2 columnas debajo del texto */
+  .hero{padding-bottom:0}
+  .hero-txt{padding-bottom:130px}
+  .stats{position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:-90px 24px 0;grid-template-columns:repeat(2,1fr);gap:12px}
+
+  /* Secciones en una sola columna y con menos aire */
+  .why{padding:56px 0 70px}
+  .why-grid{grid-template-columns:1fr;gap:32px}
+  .sec-title{margin-bottom:36px}
+  .ritual{padding:44px 6%}
+  .shop{padding:64px 0 60px}
+  .tabs{margin:-12px 0 28px}
+  .about{padding:50px 0}
+  .about-in{grid-template-columns:1fr;gap:32px}
+  .about p{max-width:none}
+  .contact{padding:50px 0 40px}
+}
+@media (max-width:520px){
+  .wrap{width:calc(100% - 32px)}
+  .nav{gap:12px}
+  .logo{font-size:22px;gap:6px}
+  .logo-mark{width:34px;height:34px}
+  .nav-r{gap:8px}
+
+  .hero-card,.ritual{margin-inline:16px}
+  .hero-card{min-height:420px}
+  .hero-txt{padding:32px 20px 130px}
+  .hero-txt h1{font-size:34px;margin-bottom:16px}
+  .hero-txt p{font-size:18px;margin-bottom:22px}
+  .stats{margin-inline:16px;gap:10px}
+  .stat{padding:16px 8px}
+  .stat b{font-size:26px}
+  .stat small{font-size:11.5px}
+
+  .ritual{padding:36px 20px}
+  .step{padding:14px 16px;gap:12px}
+  .step .n{font-size:24px;width:30px}
+  .step:hover{transform:none}
+
+  .tabs{gap:6px}
+  .tab{padding:8px 14px;font-size:13px}
+  .grid{gap:12px}
+  .card{padding:8px 8px 14px;border-radius:16px}
+  .card h3{font-size:11px;margin:10px 4px 4px}
+  .card .row{padding:0 4px}
+  .price{font-size:14px}
+  .add{width:32px;height:32px}
+
+  .contact-box{padding:44px 20px}
+  .contact p{font-size:16px}
+  .contact .btn{padding:14px 20px}
+
+  /* Carrito a pantalla completa y sin zoom automático en iPhone */
+  .cd{height:100vh;height:100dvh}
+  .cd-h{padding:16px 18px}
+  .cd-body{padding:14px 18px}
+  .cd-f{padding:14px 18px 18px}
+  .cd-f input,.cd-f textarea{font-size:16px}
+  .cd-toast{width:max-content;max-width:calc(100% - 32px);text-align:center}
+}
+@media (max-width:359px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header id="top" class="scrolled">
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="KORA, ir al inicio"><span class="logo-mark"><img src="IMG/Logo_Color.png" alt=""></span>KORA</a>
+    <ul class="menu" id="menu">
+      <li><a href="#inicio" class="">Inicio</a></li>
+      <li><a href="#tienda" class="active">Tienda</a></li>
+      <li><a href="#nosotros" class="">Sobre nosotros</a></li>
+      <li><a href="#guia" class="">Guía de cuidado</a></li>
+      <li><a href="#contacto" class="">Blog y contacto</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="#tienda" class="btn">Comprar ahora</a>
+      <button type="button" class="cart" id="cartBtn" aria-label="Abrir carrito de compras"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg><span id="count">0</span></button>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-card">
+    <!-- REEMPLAZAR: foto principal de productos KORA sobre fondo verde suave - 1600x900 -->
+    <img src="IMG/Barras.jpg" width="1600" height="900" alt="Productos de cuidado natural KORA sobre una superficie verde salvia" fetchpriority="high" class="">
+    <div class="hero-txt">
+      <h1 class="load">Descubre tu resplandor natural</h1>
+      <p class="load" style="--d:.15s">Cuidado esencial para tu piel y cabello</p>
+      <a href="#tienda" class="btn load" style="--d:.3s">Comprar ahora</a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat load" style="--d:.4s"><b>1,000+</b><small>Clientes felices</small></div>
+    <div class="stat load" style="--d:.5s"><b>Zero</b><small>Plásticos residuos</small></div>
+    <div class="stat load" style="--d:.6s"><b>100%</b><small>Ingredientes limpios</small></div>
+    <div class="stat load" style="--d:.7s"><b>3.6 ★</b><small>Valoración media</small></div>
+  </div>
+</section>
+
+<section class="why" id="porque">
+  <div class="wrap">
+    <h2 class="sec-title rv in">¿Por qué elegir KORA?</h2>
+    <div class="why-grid">
+      <div class="feat-col">
+        <div class="feat rv in"><div class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 0 0 1.4 2h11.2A1.5 1.5 0 0 0 19 19l-5-10V3M7.5 15h9"></path></svg></div><div><h3>Fórmulas limpias</h3><p>Ingredientes de origen natural, sin sulfatos ni parabenos.</p></div></div>
+        <div class="feat rv in" style="--d:.1s"><div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 3 3 5-6"></path></svg></div><div><h3>Resultados probados</h3><p>Testeados en distintos tipos de piel y cabello.</p></div></div>
+      </div>
+      <div class="arch rv in" style="--d:.1s">
+        <!-- REEMPLAZAR: foto vertical de ingredientes naturales o producto destacado - 800x600 -->
+        <img src="IMG/Manos_jabon.jpg" width="800" height="600" alt="Ingredientes naturales y producto destacado de KORA" loading="lazy" class="">
+      </div>
+      <div class="feat-col">
+        <div class="feat rv in"><div class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 9h16M10 13h4"></path></svg></div><div><h3>Empaque sostenible</h3><p>Envases reciclables y reutilizables en cada pedido.</p></div></div>
+        <div class="feat rv in" style="--d:.1s"><div class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-4 3.6-6 7-6s6.2 2 7 6"></path></svg></div><div><h3>Asesoría de expertos</h3><p>Te guiamos para armar una rutina para tu piel.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ritual rv in" id="guia">
+  <div class="ritual-in">
+    <div>
+      <h2>Tu ritual de cuidado</h2>
+      <p class="lead">Rutinas personalizadas para tu tipo de piel</p>
+      <a href="#tienda" class="btn light">Explorar rutinas</a>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><div><h3>Tipo de piel</h3><p>Encuentra productos para piel seca, grasa o sensible.</p></div></div>
+      <div class="step"><span class="n">02</span><div><h3>Cuidado esencial</h3><p>Pasos simples para una piel radiante.</p></div></div>
+      <div class="step"><span class="n">03</span><div><h3>Cuidado avanzado</h3><p>Pasos extra para una piel más vibrante.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="tienda">
+  <div class="wrap">
+    <h2 class="sec-title rv in">Nuestros productos favoritos</h2>
+    <div class="tabs rv in" role="tablist">
+      <button class="tab on" data-f="all">Todos</button>
+      <button class="tab" data-f="shampoo">Shampoo en seco</button>
+      <button class="tab" data-f="acondicionador">Acondicionador en seco</button>
+      <button class="tab" data-f="jabon">Jabón corporal</button>
+      <button class="tab" data-f="rutina">Rutinas</button>
+    </div>
+    <div class="grid">
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aEucalipto.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de eucalipto</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aLavanda.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de lavanda</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aAvena.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de vainilla y avena</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aSandalo.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de sándalo y pachulí</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aManzanilla.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de manzanilla</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="acondicionador">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/aCoco.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Acondicionador de coco</h3><div class="row"><div><div class="price">$520</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo sobre fondo claro - 800x600 -->
+        <img src="IMG/sEucalipto.jpg" width="800" height="600" alt="Frasco de KORA Dry Shampoo" loading="lazy" class=""></div>
+        <h3>Shampoo de eucalipto</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.08s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de avena en barra - 800x600 -->
+        <img src="IMG/jEucalipto.jpg" width="800" height="600" alt="Barra de KORA Jabón de Avena" loading="lazy" class=""></div>
+        <h3>Jabón de eucalipto</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.8</div></div><button class="add" aria-label="Agregar KORA Jabón de avena al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo" style="--d:.16s">
+        <div class="ph"><!-- REEMPLAZAR: foto del shampoo voluminizador - 800x600 -->
+        <img src="IMG/sLavanda.jpg" width="800" height="600" alt="Botella de KORA Shampoo Voluminizador" loading="lazy"></div>
+        <h3>Shampoo de lavanda</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Shampoo voluminizador al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de lavanda - 800x600 -->
+        <img src="IMG/jLavanda.jpg" width="800" height="600" alt="Barra de KORA Jabón de Lavanda con flores secas" loading="lazy" class=""></div>
+        <h3>Jabón de lavanda</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.5</div></div><button class="add" aria-label="Agregar KORA Jabón de lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo" style="--d:.08s">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo Mini, formato viaje - 800x600 -->
+        <img src="IMG/sAvena.jpg" width="800" height="600" alt="KORA Dry Shampoo Mini en formato de viaje" loading="lazy"></div>
+        <h3>Shampoo de vainilla y avena</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo Mini al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo" style="--d:.08s">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo Mini, formato viaje - 800x600 -->
+        <img src="IMG/sSandalo.jpg" width="800" height="600" alt="KORA Dry Shampoo Mini en formato de viaje" loading="lazy"></div>
+        <h3>Shampoo de sádalo y Pachulí</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo Mini al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo" style="--d:.08s">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo Mini, formato viaje - 800x600 -->
+        <img src="IMG/sManzanilla.jpg" width="800" height="600" alt="KORA Dry Shampoo Mini en formato de viaje" loading="lazy" class=""></div>
+        <h3>Shampoo de manzanilla</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo Mini al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="shampoo" style="--d:.08s">
+        <div class="ph"><!-- REEMPLAZAR: foto del KORA Dry Shampoo Mini, formato viaje - 800x600 -->
+        <img src="IMG/sCoco.jpg" width="800" height="600" alt="KORA Dry Shampoo Mini en formato de viaje" loading="lazy"></div>
+        <h3>Shampoo de coco</h3><div class="row"><div><div class="price">$490</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Dry Shampoo Mini al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.16s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de arcilla verde - 800x600 -->
+        <img src="IMG/jAvena.jpg" width="800" height="600" alt="Barra de KORA Jabón de Arcilla verde" loading="lazy"></div>
+        <h3>Jabón de vainilla y avena</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Jabón de arcilla al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.16s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de arcilla verde - 800x600 -->
+        <img src="IMG/jSandalo.jpg" width="800" height="600" alt="Barra de KORA Jabón de Arcilla verde" loading="lazy"></div>
+        <h3>Jabón de sándalo y pachulí</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Jabón de arcilla al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.16s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de arcilla verde - 800x600 -->
+        <img src="IMG/jManzanilla.jpg" width="800" height="600" alt="Barra de KORA Jabón de Arcilla verde" loading="lazy"></div>
+        <h3>Jabón de manzanilla</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Jabón de arcilla al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="jabon" style="--d:.16s">
+        <div class="ph"><!-- REEMPLAZAR: foto del jabón de arcilla verde - 800x600 -->
+        <img src="IMG/jcoco.jpg" width="800" height="600" alt="Barra de KORA Jabón de Arcilla verde" loading="lazy" class=""></div>
+        <h3>Jabón de coco</h3><div class="row"><div><div class="price">$250</div><div class="rate">4.6</div></div><button class="add" aria-label="Agregar KORA Jabón de arcilla al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina hidratante con varios productos - 800x600 -->
+        <img src="IMG/rutina_eucalipto.jpg" width="800" height="600" alt="Set de la Rutina Hidratante KORA" loading="lazy"></div>
+        <h3>KORA Rutina eucalipto</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.7</div></div><button class="add" aria-label="Agregar KORA Rutina hidratante al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/rutina_lavanda.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy"></div>
+        <h3>KORA Rutina lavanda</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/rutina_avena.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy"></div>
+        <h3>KORA Rutina Vainilla y Avena</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/rutina_sandalo.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy"></div>
+        <h3>KORA Rutina Sándalo y Pachulí</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/rutina_manzanilla.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy"></div>
+        <h3>KORA Rutina manzanilla</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/rutina_coco.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy"></div>
+        <h3>KORA Rutina coco</h3><div class="row"><div><div class="price">$1.150</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina hidratante con varios productos - 800x600 -->
+        <img src="IMG/duo_eucalipto.jpg" width="800" height="600" alt="Set de la Rutina Hidratante KORA" loading="lazy"></div>
+        <h3>KORA Dúo Capilar Eucalipto</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.7</div></div><button class="add" aria-label="Agregar KORA Rutina hidratante al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/duo_lavanda.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy" class=""></div>
+        <h3>KORA Dúo Capilar lavanda</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/duo_avena.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy" class=""></div>
+        <h3>KORA Dúo Capilar Vainilla y Avena</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/duo_sandalo.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy" class=""></div>
+        <h3>KORA Dúo Capilar Sándalo y Pachulí</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/duo_manzanilla.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy" class=""></div>
+        <h3>KORA Dúo Capilar manzanilla</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+      <article class="card rv in" data-c="rutina" style="--d:.24s">
+        <div class="ph"><!-- REEMPLAZAR: foto de la rutina de lavanda con productos y flores - 800x600 -->
+        <img src="IMG/duo_coco.jpg" width="800" height="600" alt="Set de la Rutina Lavanda KORA con flores de lavanda" loading="lazy" class=""></div>
+        <h3>KORA Dúo Capilar coco</h3><div class="row"><div><div class="price">$950</div><div class="rate">4.9</div></div><button class="add" aria-label="Agregar KORA Rutina lavanda al carrito"><svg class="i" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"></path><circle cx="9" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg></button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="wrap about-in">
+    <div class="about-img rv in">
+      <!-- REEMPLAZAR: foto del taller o estudio donde se desarrollan las fórmulas - 800x600 -->
+      <img src="IMG/sobre_nosotros.jpg" width="800" height="600" alt="Taller de KORA donde se desarrollan las fórmulas naturales" loading="lazy" class="">
+    </div>
+    <div class="rv in" style="--d:.12s">
+      <h2>Sobre nosotros</h2>
+      <p>KORA nació de una idea simple: cuidar tu piel y tu cabello no debería costar el futuro de nuestros ecosistemas. Desarrollamos cosmética sólida de alta eficacia formulada con botánica pura, eliminando el agua de relleno y los envases plásticos.</p>
+      <p>Cada barra se elabora de manera artesanal y consciente, garantizando fórmulas 100% biodegradables y con cero plastico. Cuidamos tu rutina diaria protegiendo los océanos en cada lavado.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-box rv in">
+      <h2>¡Hablemos de tu rutina!</h2>
+      <p>Contanos qué necesitás y te armamos una rutina a tu medida. También podés escribirnos por dudas del blog, pedidos o envíos.</p>
+      <a href="mailto:kora@gmail.com.uy" class="btn">Escribir por email</a>
+      <a href="mailto:kora@gmail.com.uy" class="mail">kora@gmail.com.uy</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a href="#inicio" class="logo" aria-label="Volver arriba"><span class="logo-mark"><img src="IMG/Logo_Color.png" alt=""></span>KORA</a>
+  <p>Resplandor natural y cuidado sostenible. © 2026 KORA.</p>
+</footer>
+
+<div class="cd-ov" id="cdOv"></div>
+<aside class="cd" id="cd" role="dialog" aria-modal="true" aria-label="Carrito de compras" aria-hidden="true">
+  <div class="cd-h"><h2>Tu carrito</h2><button type="button" class="cd-x" id="cdClose" aria-label="Cerrar carrito">×</button></div>
+  <div class="cd-body" id="cdBody"><p class="cd-empty">Tu carrito está vacío.<br>Agregá productos desde la tienda.</p></div>
+  <div class="cd-f" id="cdFoot" style="display: none;">
+    <div class="cd-total"><span>Total</span><span id="cdTotal">$0</span></div>
+    <form id="cdForm" novalidate="">
+      <input type="text" id="cName" placeholder="Nombre y apellido" autocomplete="name" required="">
+      <input type="email" id="cMail" placeholder="Tu email" autocomplete="email" required="">
+      <input type="tel" id="cTel" placeholder="Teléfono" autocomplete="tel">
+      <textarea id="cAddr" placeholder="Dirección de envío o comentarios"></textarea>
+      <button type="submit" class="btn">Finalizar compra</button>
+    </form>
+    <p class="cd-note">Al finalizar se abrirá tu correo con el pedido listo para enviar a KORA.</p>
+  </div>
+</aside>
+<div class="cd-toast" id="cdToast" role="status"></div>
+
+<script>
+(function(){
+  var header=document.querySelector('header'),
+      burger=document.getElementById('burger'),
+      menu=document.getElementById('menu'),
+      links=menu.querySelectorAll('a');
+
+  function toggle(open){
+    menu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+  }
+  burger.addEventListener('click',function(){toggle(!menu.classList.contains('open'))});
+  links.forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+
+  window.addEventListener('scroll',function(){header.classList.toggle('scrolled',window.scrollY>10)},{passive:true});
+
+  /* Revelado al hacer scroll */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12});
+    rv.forEach(function(el){io.observe(el)});
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+
+  /* Enlace activo según la sección visible */
+  var map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var secs=['inicio','tienda','nosotros','guia','contacto'].map(function(id){return document.getElementById(id)});
+  var so=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('active')});
+        if(map[e.target.id])map[e.target.id].classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)so.observe(s)});
+
+  /* Filtro de productos */
+  var tabs=document.querySelectorAll('.tab'),cards=document.querySelectorAll('.card');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      var f=t.dataset.f;
+      cards.forEach(function(c){
+        var show=f==='all'||c.dataset.c===f;
+        c.classList.toggle('hide',!show);
+        if(show)c.classList.add('in');
+      });
+    });
+  });
+
+  /* Carrito */
+  var EMAIL='kora@gmail.com.uy', KEY='kora_cart';
+  var cart=[];
+  try{cart=JSON.parse(localStorage.getItem(KEY)||'[]')||[]}catch(e){cart=[]}
+  var count=document.getElementById('count'),
+      cd=document.getElementById('cd'),
+      ov=document.getElementById('cdOv'),
+      body=document.getElementById('cdBody'),
+      foot=document.getElementById('cdFoot'),
+      totalEl=document.getElementById('cdTotal'),
+      form=document.getElementById('cdForm'),
+      toast=document.getElementById('cdToast'),
+      lastFocus=null, tt;
+
+  function money(v){return '$'+v.toLocaleString('es-UY')}
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+  function totals(){
+    var q=0,t=0;cart.forEach(function(i){q+=i.qty;t+=i.qty*i.price});return {q:q,t:t};
+  }
+  function render(){
+    var T=totals();
+    count.textContent=T.q;count.classList.toggle('on',T.q>0);
+    totalEl.textContent=money(T.t);
+    foot.style.display=cart.length?'':'none';
+    if(!cart.length){
+      body.innerHTML='<p class="cd-empty">Tu carrito está vacío.<br>Agregá productos desde la tienda.</p>';
+      return;
+    }
+    body.innerHTML=cart.map(function(i,k){
+      return '<div class="cd-item">'+
+        '<img src="'+esc(i.img)+'" alt="">'+
+        '<div class="cd-info"><b>'+esc(i.name)+'</b><small>'+money(i.price)+' c/u</small>'+
+        '<div class="cd-qty"><button type="button" data-a="minus" data-k="'+k+'" aria-label="Quitar uno">&minus;</button>'+
+        '<span>'+i.qty+'</span>'+
+        '<button type="button" data-a="plus" data-k="'+k+'" aria-label="Agregar uno">+</button></div></div>'+
+        '<button type="button" class="cd-rm" data-a="rm" data-k="'+k+'" aria-label="Eliminar '+esc(i.name)+'">&times;</button>'+
+        '</div>';
+    }).join('');
+  }
+  function open(){
+    lastFocus=document.activeElement;
+    cd.classList.add('open');ov.classList.add('open');cd.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    document.getElementById('cdClose').focus();
+  }
+  function close(){
+    cd.classList.remove('open');ov.classList.remove('open');cd.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  function say(msg){
+    toast.textContent=msg;toast.classList.add('on');
+    clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1800);
+  }
+
+  document.querySelectorAll('.add').forEach(function(b){
+    b.addEventListener('click',function(){
+      var card=b.closest('.card'),
+          name=card.querySelector('h3').textContent.trim(),
+          price=parseInt(card.querySelector('.price').textContent.replace(/[^\d]/g,''),10)||0,
+          im=card.querySelector('img'),
+          img=im?im.getAttribute('src'):'',
+          found=cart.filter(function(i){return i.name===name})[0];
+      if(found)found.qty++;else cart.push({name:name,price:price,img:img,qty:1});
+      save();render();say('Agregado: '+name);
+    });
+  });
+
+  document.getElementById('cartBtn').addEventListener('click',function(){render();open()});
+  document.getElementById('cdClose').addEventListener('click',close);
+  ov.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cd.classList.contains('open'))close()});
+
+  body.addEventListener('click',function(e){
+    var t=e.target.closest('button[data-a]');if(!t)return;
+    var k=+t.dataset.k,a=t.dataset.a;
+    if(a==='plus')cart[k].qty++;
+    else if(a==='minus'){cart[k].qty--;if(cart[k].qty<1)cart.splice(k,1)}
+    else if(a==='rm')cart.splice(k,1);
+    save();render();
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!cart.length)return;
+    var name=document.getElementById('cName').value.trim(),
+        mail=document.getElementById('cMail').value.trim(),
+        tel=document.getElementById('cTel').value.trim(),
+        addr=document.getElementById('cAddr').value.trim();
+    if(!name||!/^\S+@\S+\.\S+$/.test(mail)){
+      say('Completá tu nombre y un email válido');
+      (name?document.getElementById('cMail'):document.getElementById('cName')).focus();
+      return;
+    }
+    var T=totals(),
+        lines=cart.map(function(i){return '- '+i.qty+' x '+i.name+' ('+money(i.price)+' c/u) = '+money(i.qty*i.price)}),
+        text='Hola KORA, quiero hacer este pedido:\n\n'+lines.join('\n')+
+             '\n\nTotal: '+money(T.t)+
+             '\n\nNombre: '+name+'\nEmail: '+mail+(tel?'\nTeléfono: '+tel:'')+(addr?'\nDirección / comentarios: '+addr:'')+
+             '\n\nGracias.',
+        href='mailto:'+EMAIL+'?cc='+encodeURIComponent(mail)+
+             '&subject='+encodeURIComponent('Nuevo pedido KORA - '+name)+
+             '&body='+encodeURIComponent(text);
+    window.location.href=href;
+    body.innerHTML='<div class="cd-ok"><h3>¡Casi listo!</h3>'+
+      '<p>Se abrió tu correo con el pedido. Solo falta que apretes <b>Enviar</b>.</p>'+
+      '<p>¿No se abrió? <a class="l" href="'+href+'">Abrir el correo de nuevo</a></p>'+
+      '<button type="button" class="btn" id="cdDone">Listo, vaciar carrito</button></div>';
+    foot.style.display='none';
+    document.getElementById('cdDone').addEventListener('click',function(){
+      cart=[];save();render();close();form.reset();
+    });
+  });
+
+  render();
+})();
+</script>
+</body></html>
